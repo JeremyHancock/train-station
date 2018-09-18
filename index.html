@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="assets/js/javascript.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script> -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <title>Train Station</title>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-2">
+    </div>
+    <div class="jumbotron col-8">
+      <h1 class="display-4">Stazione di Roma Trastevere</h1>
+    </div>
+    <div class="col-2">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8" id="header">Train Schedule</div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <table class="table col-8 container">
+      <thead>
+        <tr id="trainTable">
+          <th id="number" scope="col">Train</th>
+          <th id="destination" scope="col">Destination</th>
+          <th id="arrival" scope="col">Next Arrival</th>
+          <th id="minutes" scope="col">Arriving in</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr> -->
+      </tbody>
+    </table>
+    <div class="col-2"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8" id="header">Add a Train</div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="container col-8">
+
+      <form class="col-8">
+        <div class="form-group">
+          <label for="destination">Train Number</label>
+          <input type="number" class="form-control" id="formInput1" placeholder="713">
+          <label for="destination">Destination</label>
+          <input type="text" class="form-control" id="formInput2" placeholder="Firenze">
+          <label for="firstTime">First departure time (HH:mm - military time)</label>
+          <input type="text" class="form-control" id="formInput3" placeholder="20:03">
+          <label for="frequency">Frequency (in minutes)</label>
+          <input type="number" class="form-control" id="formInput4" placeholder="37">
+          <br>
+          <button class="btn" id="button">Add Train</button>
+
+        </div>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</body>
+
+</html>

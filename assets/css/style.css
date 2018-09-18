@@ -1,0 +1,25 @@
+body {
+    background-image:url("../images/map.jpg")
+}
+
+h1 {
+    text-align: center;
+}
+#header {
+    background-color: rgba(60, 60, 172);
+    color: white;
+}
+
+.container {
+    background-color: white;
+}
+
+#button {
+    background-color: rgba(60, 60, 172);
+    color: white;
+}
+
+.jumbotron {
+    background-color: rgb(31, 31, 170);
+    color: white;
+}
