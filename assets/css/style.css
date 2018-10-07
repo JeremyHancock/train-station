@@ -14,7 +14,7 @@ h1, h5 {
     background-color: white;
 }
 
-#button {
+.btn {
     background-color: rgba(60, 60, 172);
     color: white;
 }

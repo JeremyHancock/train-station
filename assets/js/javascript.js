@@ -4,7 +4,6 @@ $(document).ready(function () {
         populateForm()
     }
     setInterval(update, 1000);
-    // array that will hold the trains, it starts with three pre-loaded
     var config = {
         apiKey: "AIzaSyDUauf2fgLUbSb9j1R5IPf8-B3kUOsb3yU",
         authDomain: "train-station-5de63.firebaseapp.com",
@@ -16,6 +15,7 @@ $(document).ready(function () {
     firebase.initializeApp(config);
     var database = firebase.database();
 
+    // array that will hold the trains, it starts with three pre-loaded
     var trainArray = [
         {
             number: 717,
@@ -69,14 +69,17 @@ $(document).ready(function () {
             var wait = trainArray[i].frequency - tRemainder;
             var nextArrival = moment().add(wait, "minutes");
             var nextArrivalConverted = moment(nextArrival).format("hh:mm")
+            // var cancel = '<button class="btn del" id="button">Delete</button>'
             // creates a new row in the table for each train
             var newTrain =
                 `<tr>
             <td>${trainArray[i].number}</td>
             <td>${trainArray[i].destination}</td>
             <td>${nextArrivalConverted}</td>
-            <td>${wait}</td>
+            <td>${wait} minutes</td>
         </tr>`
+        // <td>${cancel}</td>
+
             $("#trainRow").append(newTrain)
 
         };
@@ -85,14 +88,13 @@ $(document).ready(function () {
     populateForm();
 
     // this handles new trains entered into the form by the user. 
-    $(".btn").click(function () {
+    $(".sub").click(function () {
         event.preventDefault();
 
         var trainNumber = $("#formInput1").val().trim();
         var destination = $("#formInput2").val().trim();
         var firstArrivalTime = $("#formInput3").val().trim();
         var frequency = $("#formInput4").val().trim();
-        var newTrain = { number: trainNumber, destination: destination, frequency: frequency, firstArrivalTime: firstArrivalTime };
         // pushes each train to firebase
         database.ref().push({
             number: trainNumber,
@@ -101,5 +103,9 @@ $(document).ready(function () {
             frequency: frequency
         })
     });
-
+    $(".del").click(function () {
+        console.log("I've been clicked");
+        var closestRow = this.closest("tr");
+        console.log(closestRow);
+    });
 });
